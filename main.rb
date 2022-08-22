@@ -14,11 +14,16 @@ game = Math_game.new(p.p1, p.p2)
 
 #game loop, keep going until one player loses, pass through life
 while (game.game_state)
+  game.next_player
+  game.current_player
 
   #Ask new question
   game.new_question
 
   #Check life to see if game over
-  game.on(life_check(p.p1_life, p.p2_life))
+
+  #go to next player
+  
+
 end
 

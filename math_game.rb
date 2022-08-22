@@ -14,14 +14,21 @@ class Math_game
   def initialize(p1, p2)
     @p1 = p1
     @p2 = p2
-    @player = self.p1
+    @player = self.p2
     @game_state = true
 
   end
 
-  def current_player(player)
-    puts "It is #{Players.p1}'s turn"
+  def current_player
+    puts "It is #{player}'s turn"
+  end
 
+  def next_player
+    if self.player == self.p1
+      self.player = self.p2
+    elsif self.player == self.p2
+      self.player = self.p1
+    end
   end
 
   def new_question
