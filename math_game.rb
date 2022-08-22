@@ -9,12 +9,13 @@
 
 class Math_game
   attr_reader :p1, :p2
-  attr_accessor :player
+  attr_accessor :player, :game_state
 
   def initialize
     @p1 = 'p1'
     @p2 = 'p2'
     @player = self.p1
+    @game_state = true
 
   end
 
@@ -24,11 +25,35 @@ class Math_game
   end
 
   def new_question
+    num1 = rand(1..20)
+    num2 = rand(1..20)
+    result = num1 + num2
+
+    puts "What is #{num1} + #{num2}?"
+    answer = gets.chomp
+
+    if(answer == result){
+      puts "Correct! Congratulations!"
+    }
+    else{
+      puts "Really? no... the correct answer was #{result}"
+    }
+
 
   end
 
+  def life_check(p1_life, p2_life)
+    if(p1_life == 0 || p2_life == 0)
+      self.game_state = false
+    end
+  end
+
+  private
+
+  def math_question
 
 
+  end
 
 end
 
