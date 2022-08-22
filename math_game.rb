@@ -7,15 +7,19 @@
 #When lose, announce winner
 
 
-Class math_game
-  attr_accessor
+class Math_game
+  attr_reader :p1, :p2
+  attr_accessor :player
 
-  def initialize(life, p1, p2)
-    
+  def initialize
+    @p1 = 'p1'
+    @p2 = 'p2'
+    @player = self.p1
 
   end
 
   def current_player
+    puts "It is #{Players.p1}'s turn"
 
   end
 
@@ -23,24 +27,8 @@ Class math_game
 
   end
 
-  def reduce_life
 
-  end
 
 
 end
-
-class Players
-  attr_accessor :p1, :p2
-
-  def initialize
-    puts 'Player 1 please enter your name'
-    @p1 = $stdin.gets.chomp
-    puts 'Player 2 please enter your name'
-    @p2 = $stdin.gets.chomp
-  end
-
-end
-
-players = Players.new
 
