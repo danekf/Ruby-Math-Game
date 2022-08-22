@@ -20,7 +20,7 @@ class Math_game
   end
 
   def current_player
-    puts "It is #{player}'s turn"
+    player
   end
 
   def next_player
@@ -57,6 +57,9 @@ class Math_game
     end
   end
 
+  def declare_winner
+    puts "#{player} is the winner!"
+  end
 
   private
 
