@@ -8,14 +8,14 @@
 
 
 class Math_game
-  attr_reader :p1, :p2
-  attr_accessor :player, :game_state
+  attr_reader :p1, :p2 
+  attr_accessor :player, :game_state, :player_id
 
   def initialize(p1, p2)
     @p1 = p1
     @p2 = p2
-    @player = self.p2
-    @game_state = true
+    @player = self.p1
+    @player_id = 'p1'
 
   end
 
@@ -26,8 +26,10 @@ class Math_game
   def next_player
     if self.player == self.p1
       self.player = self.p2
+      self.player_id = 'p2'
     elsif self.player == self.p2
       self.player = self.p1
+      self.player_id = 'p1'
     end
   end
 
@@ -48,13 +50,6 @@ class Math_game
     end
 
 
-  end
-
-  ##simple check for player life, ends game if is given false
-  def on(life_check)
-    if !life_check
-      game_state = false
-    end
   end
 
   def declare_winner

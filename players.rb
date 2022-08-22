@@ -10,16 +10,24 @@ class Players
     @p2_life = 3
   end
 
-  def reduce_life
-
+  def reduce_life (player)
+    if (player == 'p1')
+      self.p1_life -= 1
+    elsif (player == 'p2')
+      self.p2_life -= 1
+    end
   end
 
-  def life_check(p1_life, p2_life)
-    if(p1_life == 0 || p2_life == 0)
+
+
+  def life_check
+    if(self.p1_life == 0 || self.p2_life == 0)
       return false
     else
       return true 
     end
   end
+
+
 
 end
