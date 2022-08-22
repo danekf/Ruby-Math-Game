@@ -17,7 +17,7 @@ while (game.game_state)
   
   game.new_question
 
-  puts 
+  #Check life to see if game over
   life_check(p.p1_life, p.p2_life)
 end
 

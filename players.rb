@@ -14,4 +14,11 @@ class Players
 
   end
 
+  def life_check(p1_life, p2_life)
+    if(p1_life == 0 || p2_life == 0)
+      return false
+    else
+      return true 
+  end
+
 end

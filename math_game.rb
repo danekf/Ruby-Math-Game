@@ -30,14 +30,15 @@ class Math_game
     result = num1 + num2
 
     puts "What is #{num1} + #{num2}?"
-    answer = gets.chomp
+    answer = gets.chomp.to_i
 
-    if(answer == result){
+    if answer == result
       puts "Correct! Congratulations!"
-    }
-    else{
+      return true
+    else
       puts "Really? no... the correct answer was #{result}"
-    }
+      return false
+    end
 
 
   end
