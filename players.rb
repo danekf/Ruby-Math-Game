@@ -19,6 +19,7 @@ class Players
       return false
     else
       return true 
+    end
   end
 
 end

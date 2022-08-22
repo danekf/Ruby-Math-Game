@@ -11,15 +11,15 @@ class Math_game
   attr_reader :p1, :p2
   attr_accessor :player, :game_state
 
-  def initialize
-    @p1 = 'p1'
-    @p2 = 'p2'
+  def initialize(p1, p2)
+    @p1 = p1
+    @p2 = p2
     @player = self.p1
     @game_state = true
 
   end
 
-  def current_player
+  def current_player(player)
     puts "It is #{Players.p1}'s turn"
 
   end
@@ -43,11 +43,13 @@ class Math_game
 
   end
 
-  def life_check(p1_life, p2_life)
-    if(p1_life == 0 || p2_life == 0)
-      self.game_state = false
+  ##simple check for player life, ends game if is given false
+  def on(life_check)
+    if !life_check
+      game_state = false
     end
   end
+
 
   private
 
